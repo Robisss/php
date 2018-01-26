@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <button onclick="myStart();">start</button>
+    <button onclick="myPause();" id="pauseButton">pause</button>
+    <button onclick="myReset()">reset</button>
+    <button onclick="myFaster();">fast</button>
+    <button onclick="mySlover();">slover</button>
+
+    <div id="h"></div>
+    <div id="m"></div>
+    <div id="s"></div>
+
+</head>
+<body>
+<script>
+let tid=null;
+let speed=1000;
+let h=0;
+let m=0;
+let s=0;
+
+function showTime(){
+    var str="00"+h;
+    str=str.substring(str.length-2);
+    document.getElementById('h').innerHTML=str;
+    str="00"+m;
+    str=str.substring(str.length-2);
+    document.getElementById('m').innerHTML=str;
+    str="00"+s;
+    str=str.substring(str.length-2);
+    document.getElementById('s').innerHTML=str;
+}
+
+function myStart(){
+    showTime();
+    if (!tid) {
+        tid=setInterval(myTimer,speed);
+    }
+}
+
+function myTimer(){
+    s++;
+    if (s===60){
+        s=0;
+        m++;
+        if (m===60){
+            m=0;
+            h++;
+            if (h===24){
+                h=0;
+            }
+        }
+    }
+    showTime();
+}
+
+function myPause(){
+    if (tid) {
+        document.getElementById('pauseButton').textContent="Continue";
+        clearInterval(tid);
+        tid=null;
+    } else {
+        document.getElementById('pauseButton').textContent="Pause";
+        tid= setInterval(myTimer,speed);
+    }
+}
+
+function myReset(){
+    if(tid){
+        clearInterval(tid);
+        tid=null;
+    }
+    speed=1000;
+    document.getElementById('pauseButton').textContent="Pause";
+    h=0;
+    m=0;
+    s=0;
+    showTime();
+}
+
+function myFaster(){
+    if (tid) {
+        clearInterval(tid);
+        if (speed>1) {
+            speed /=2;
+        }
+        tid= setInterval(myTimer,speed);
+    }
+}
+
+function mySlover(){
+    if (tid) {
+        clearInterval(tid);
+        speed *=2;
+        tid= setInterval(myTimer,speed);
+    }
+}
+
+</script>
+
+</body>
+</html>

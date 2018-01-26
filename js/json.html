@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <h1> Testas</h1>
+
+
+
+</head>
+<body>
+<button id="myg" value="myvalue" >List</button>
+<div id ="demo" </div>
+    <form id='form'>
+   <input id= "userName"name='username'><br>
+  <input name='eMail'><br>
+   <input name='age'><br>
+  <input type='submit'>
+</form>
+
+
+
+<script>
+
+$(function(){
+    $("#myg").click(function(){
+        $.ajax({
+          url: "http://192.168.1.81:8080/list",
+          //data:s,
+          contentype: "application/json",
+          type: "GET",                          //"post"; /list /update/
+          //dataType:"json",
+          function myFunction() {
+              var i;
+              for (i = 0; i < x.length ;i++) {
+                  text += x.elements[i].value + "<br>";
+              }
+              document.getElementById("demo").innerHTML = text;
+          
+            }
+        });
+    });
+});
+
+$(function init() {
+$("#form").click(function(){
+    $.ajax({
+        dataType: "json",
+        url: "http://192.168.1.81:8080/update",
+        success: function (data) {
+            console.log(data);
+            $("#form").append(data);
+        }
+    });
+    });
+    });
+
+
+
+</script>
+
+</body>
+</html>

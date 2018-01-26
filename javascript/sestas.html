@@ -1,0 +1,47 @@
+<html>
+<body>
+<script>
+var tavoPasirinkimas = prompt("Pasirink akmuo, popieriu ar zirkles?");
+var pasirinkimas = Math.random();
+if   (pasirinkimas < 0.33){
+    pasirinkimas = "akmuo";
+} else if(pasirinkimas <= 0.66) {
+  pasirinkimas = "popierius";
+} else {
+  pasirinkimas = "zirkles";
+}
+
+var compare = function(pasirinkimas1, pasirinkimas2) {
+    if(pasirinkimas1 === pasirinkimas2) {
+    return "...............";
+}
+if(pasirinkimas1 === "akmuo") {
+    if(pasirinkimas2 === "zirkles") {
+        return "akmuo laimejo";
+    } else {
+        return "popierius laimejo";
+    }
+}
+if(pasirinkimas1 === "paper") {
+    if(pasirinkimas2 === "akmuo") {
+        return "popierius laimejo";
+    } else {
+        if(pasirinkimas2 === "zirkles") {
+            return "zirkles laimejo";
+    }
+}
+if(pasirinkimas1 === "zirkles") {
+    if(pasirinkimas2 === "akmuo") {
+        return "akmuo laimejo";
+    } else {
+        if(pasirinkimas2 === "popierius") {
+            return "zirkles laimejo";
+            console.log("User Choice: " + userChoice);
+            console.log("Computer Choice: " + computerChoice);
+            compare(userChoice, computerChoice);
+
+
+
+</script>
+</body>
+</html>

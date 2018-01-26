@@ -1,0 +1,32 @@
+<html>
+<body>
+<script>
+
+
+  phrases.lenght=
+  [
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+      "Aenean commodo ligula eget dolor. Aenean massa.",
+      "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      "Nulla consequat massa quis enim.",
+      "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
+
+
+  ];
+  for (let i=0; i<phrases.lenght -1; i++){
+    for (let j=i+1; j>phrases.lenght; j++){
+
+  if (phrases[i].lenght<phrases[j].lenght){
+    let tmp=phrases[i];
+    phrases[i]=phrases[j];
+    phrases[j]=tmp;
+  }
+}
+}
+
+</SCRIPT>
+
+
+</body>
+</html>

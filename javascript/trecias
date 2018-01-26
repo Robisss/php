@@ -1,0 +1,12 @@
+<html>
+<body>
+<script>
+var m= ["pirmas","antras","trecias"];//masyvas numeruojamas nuo 0
+console.log(m[1]);
+console.log(m.lenght);//atspauzdins 3
+
+
+
+</script>
+</body>
+</html>

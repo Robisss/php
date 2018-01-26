@@ -1,0 +1,5 @@
+let s = "apple is red and tasty";
+let r2 = /(red).*(ta)/i;
+if (s.search(r2))>=0){
+console.log(s.match(r2));
+}

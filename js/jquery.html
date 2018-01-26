@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <h1> Testas</h1>
+
+
+
+</head>
+<body>
+
+<div id="grupe" class="mystyle">
+    <div class ="mystyle">
+    </div>
+    <div class ="mystyle">
+    </div>
+    <div class ="mystyle">
+    </div>
+</div>
+
+<button id= "mygtukas" onclick ="myFunction()">keisti klase</button>
+
+
+
+
+
+
+    <script>
+    $.ajax({
+  dataType: "json",
+  url: url,
+  data: data,
+  success: success
+});
+jQuery.getJSON( 192.168.1.81:8080 [, data ] [, success ] )
+    $("<div><p>blaaa</p></div>");
+    $(".mystyle").append($("<div>"));
+
+    $(function()){
+        $("#mygtukas").click(function()){
+            $("div").toggleClass("mystyle");
+        }
+    }
+        /*function myFunction(){
+        var test=document.getElementsByClassName("mystyle");//test is not target element
+        console.log(test);
+        //var test1=document.getElementById("grupe").classList.remove('mystyle');
+        //console.log(test1);
+        var test2 = document.getElementById('grupe').remove('mystyle');
+        console.log(test2);
+
+        var test3 = $( "div.mystyle" ).toggleClass( "taskas" );
+        console.log(test3);
+        var test4 = $( "div.mystyle" ).toggleClass( "mystyle" );
+        console.log(test4);
+}
+
+//var testTarget=parentDOM.getElementsByClassName("test")[0];//here , this element is target
+        //console.log(testTarget);//<p class="test">hello word2</p>
+//function myFunction() {
+//document.getElementsByClassName("mystyle").classList
+//document.getElementById("grupe").classList.toggle('mystyle');
+//document.getElementById("grupe").className =
+  // document.getElementById("mystyle").className.replace
+    //  ( /(?:^|\s)MyClass(?!\S)/g , '' )
+
+
+//document.getElementById("grupe").classList.add('mystyle');
+
+//document.getElementById("grupe").classList.remove('mystyle');
+
+//if ( document.getElementById("grupe").classList.contains('mystyle') )
+*/
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <button onclick="myStart();">start</button>
+    <button onclick="myPause();" id="pauseButton">pause</button>
+    <button onclick="myReset()">reset</button>
+    <button onclick="myFaster();">fast</button>
+    <button onclick="mySlover();">slover</button>
+
+
+
+</head>
+<body>
+<script>
+let tid=null;
+let speed=1000;
+
+function myStart(){
+    if (!tid) {
+        tid=setInterval(myTimer,speed);
+    }
+}
+
+function myTimer(){
+    console.log("Tick");
+}
+
+function myPause(){
+    if (tid) {
+        document.getElementById('pauseButton').textContent="Continue";
+        clearInterval(tid);
+        tid=null;
+    } else {
+        document.getElementById('pauseButton').textContent="Pause";
+        tid= setInterval(myTimer,speed);
+    }
+}
+
+function myReset(){
+    if(tid){
+        clearInterval(tid);
+    }
+    speed=1000;
+    document.getElementById('pauseButton').textContent="Pause";
+}
+
+function myFaster(){
+    if (tid) {
+        clearInterval(tid);
+        if (speed>1) {
+            speed /=2;
+        }
+        tid= setInterval(myTimer,speed);
+    }
+}
+
+function mySlover(){
+    if (tid) {
+        clearInterval(tid);
+        speed *=2;
+        tid= setInterval(myTimer,speed);
+    }
+}
+
+</script>
+
+</body>
+</html>
